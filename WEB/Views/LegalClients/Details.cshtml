@@ -1,0 +1,74 @@
+﻿@model GPSTracker.DAL.Entities.LegalClient
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>LegalClient</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Archived)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Archived)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SecondName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SecondName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PatrName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PatrName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.INN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.INN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KPP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KPP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Adress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Adress)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
