@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace DAL.EFIdentity
 {
     public class RoleManager : RoleManager<Role, int>
     {
-        public RoleManager(IRoleStore<Role, int> store) : base(store)    //TODO: bind to RoleStore
+        public RoleManager(RoleStore<Role, int, UserRole> store) : base(store)    //TODO: bind to RoleStore
         {
         }
     }

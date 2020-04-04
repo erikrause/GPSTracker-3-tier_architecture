@@ -8,10 +8,11 @@ using System.Threading.Tasks;
 
 namespace UserServiceBase
 {
-    public interface IUserService
+    public interface IUserService : IDisposable
     {
-        Task<IOperationDetails> Create(User userDto);
-        Task<ClaimsIdentity> Authenticate(User userDto);
-        Task SetInitialData(User adminDto, List<string> roles);
+        Task<IOperationDetails> Create(User user, string password);
+        Task<ClaimsIdentity> Authenticate(User user, string password);
+        Task<User> GetCurrent();
+        //Task SetInitialData(User admin, List<string> roles);
     }
 }

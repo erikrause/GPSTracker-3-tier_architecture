@@ -61,8 +61,11 @@
       <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.3\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    <Reference Include="Microsoft.Owin, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.4.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.1.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Owin.Security, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
@@ -165,6 +168,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IndividualClientsController.cs" />
@@ -178,12 +182,12 @@
     <Compile Include="Models\Client.cs" />
     <Compile Include="Models\Contract.cs" />
     <Compile Include="Models\History.cs" />
+    <Compile Include="Models\Identity\LoginModel.cs" />
+    <Compile Include="Models\Identity\RegisterModel.cs" />
     <Compile Include="Models\IndividualClient.cs" />
     <Compile Include="Models\LegalClient.cs" />
     <Compile Include="Models\Payment.cs" />
-    <Compile Include="Models\Tariff.cs" />
     <Compile Include="Models\Tracker.cs" />
-    <Compile Include="Models\User.cs" />
     <Compile Include="Models\Vehicle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -256,9 +260,12 @@
     <Content Include="Views\LegalClients\Delete.cshtml" />
     <Content Include="Views\LegalClients\Details.cshtml" />
     <Content Include="Views\LegalClients\Index.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Manage\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -285,6 +292,14 @@
     <ProjectReference Include="..\DAL\DAL.csproj">
       <Project>{b195ae2e-a13d-45c0-a6ef-c92c4fb5c85e}</Project>
       <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UserServiceBase\UserServiceBase.csproj">
+      <Project>{F2CB85A3-950C-4505-9F63-2183F98028E2}</Project>
+      <Name>UserServiceBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UserServiceImplementation\UserServiceImplementation.csproj">
+      <Project>{CA4D4AAB-EF94-49B4-86F8-5FDA8BD45E39}</Project>
+      <Name>UserServiceImplementation</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

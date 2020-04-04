@@ -28,7 +28,7 @@ namespace GPSTracker.DAL.Entities
 
         [Column(TypeName = "char")]
         [MaxLength(10)]
-        public string Cetegory { get; set; }
+        public string Category { get; set; }
 
         public int Year { get; set; }
 

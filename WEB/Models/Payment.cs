@@ -15,7 +15,7 @@ namespace WEB.Models
         public int? ClientId { get; set; }
         public virtual Client Client { get; set; }
 
-        public DateTime DateTime { get; set; }       //сам доавил
+        //public DateTime DateTime { get; set; }       //сам доавил
 
 
     }

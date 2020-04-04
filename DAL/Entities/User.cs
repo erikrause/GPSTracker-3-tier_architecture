@@ -16,7 +16,7 @@ namespace GPSTracker.DAL.Entities
     public class User : IdentityUser<int, UserLogin, UserRole, UserClaim>, IEntity
     {
 
-        [MaxLength(255)]
+        //[MaxLength(255)]
         //public string UserName { get; set; }
 
         //[MaxLength(255)]

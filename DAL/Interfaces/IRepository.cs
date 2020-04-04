@@ -6,11 +6,14 @@ using System.Threading.Tasks;
 using System.Data.Entity;
 using System.Linq.Expressions;
 using GPSTracker.DAL.Interfaces;
+using DAL.EFIdentity;
 
 namespace GPSTracker.DAL.Interfaces
 {
-    public interface IRepository
+    public interface IRepository : IDisposable
     {
+        UserManager UserManager { get; }
+        RoleManager RoleManager { get; }
         Task<T> Get<T>(int id) where T : class, IEntity;
         Task Save<T>(T entity) where T : class, IEntity;
         Task<IEnumerable<T>> GetAll<T>() where T : class, IEntity;

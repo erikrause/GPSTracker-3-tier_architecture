@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
-namespace WEB.Models
+namespace UserServiceBase
 {
-    public class Tariff
+    public interface IServiceCreator
     {
-        public string OBDInformation { get; set; }
+        IUserService CreateUserService(string connection);
     }
 }

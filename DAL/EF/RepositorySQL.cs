@@ -1,4 +1,7 @@
-﻿using GPSTracker.DAL.Interfaces;
+﻿using DAL.EFIdentity;
+using GPSTracker.DAL.Entities;
+using GPSTracker.DAL.Interfaces;
+using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -12,10 +15,14 @@ namespace GPSTracker.DAL.EF
     public class RepositorySQL : IRepository
     {
         TrackerContext db;
+        public UserManager UserManager { get; private set; }
+        public RoleManager RoleManager { get; private set; }
 
         public RepositorySQL(string connectionString)
         {
             db = new TrackerContext(connectionString);
+            UserManager = new UserManager(new UserStore<User, Role, int, UserLogin, UserRole, UserClaim>(db));
+            RoleManager = new RoleManager(new RoleStore<Role, int, UserRole>(db));
         }
         public async Task<T> Get<T>(int id) where T : class, IEntity
         {
@@ -60,6 +67,10 @@ namespace GPSTracker.DAL.EF
         {
             db.Entry(entity).State = EntityState.Modified;
             await db.SaveChangesAsync();
+        }
+        public void Dispose()     // Async?
+        {
+            db.Dispose();
         }
     }
 }
