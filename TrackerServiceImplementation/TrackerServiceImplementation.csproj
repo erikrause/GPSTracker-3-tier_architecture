@@ -53,6 +53,10 @@
       <Project>{B195AE2E-A13D-45C0-A6EF-C92C4FB5C85E}</Project>
       <Name>DAL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ServiceBase\CRUDServiceBase.csproj">
+      <Project>{1DAB7694-84E8-4BD8-9806-C7776A7B1525}</Project>
+      <Name>CRUDServiceBase</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TrackerServiceBase\TrackerServiceBase.csproj">
       <Project>{AFC43565-C91F-4907-823A-1D9FB482FF28}</Project>
       <Name>TrackerServiceBase</Name>

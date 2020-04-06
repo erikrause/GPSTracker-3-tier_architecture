@@ -1,12 +1,8 @@
 ﻿using ClientServiceImplementation;
 using ClientServiceBase;
 using Ninject.Modules;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using ServiceBase;
-using CRUDService;
+using CRUDServiceImplementation;
 
 namespace WEB.Infrastructure
 {

@@ -6,15 +6,20 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using UserServiceBase;
 
 namespace WEB.Controllers
 {
+    [Authorize]
     public class LegalClientsController : Controller
     {
         IClientService ClientService;
-        public LegalClientsController(IClientService clientService)
+        IUserService UserService;
+
+        public LegalClientsController(IClientService clientService, IUserService userService)
         {
             ClientService = clientService;
+            UserService = userService;
         }
         // GET: LegalClients
         public async Task<ActionResult> Index()
@@ -40,7 +45,8 @@ namespace WEB.Controllers
         {
             try
             {
-                await ClientService.CreateLegalClient(legalClient);
+                User currentUser = await UserService.GetCurrent();
+                await ClientService.CreateLegalClient(legalClient, currentUser);
 
                 return RedirectToAction("Index");
             }

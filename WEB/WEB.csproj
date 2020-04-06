@@ -170,6 +170,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ClientController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IndividualClientsController.cs" />
     <Compile Include="Controllers\LegalClientsController.cs" />
@@ -269,6 +270,7 @@
     <Content Include="Views\Vehicles\Details.cshtml" />
     <Content Include="Views\Vehicles\Delete.cshtml" />
     <Content Include="Views\Vehicles\Edit.cshtml" />
+    <Content Include="Views\Client\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -295,6 +297,10 @@
     <ProjectReference Include="..\ClientService\ClientServiceImplementation.csproj">
       <Project>{21f2f92a-d530-420b-9d17-a323192c49e1}</Project>
       <Name>ClientServiceImplementation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CRUDServiceImplementation\CRUDServiceImplementation.csproj">
+      <Project>{C84D7DA8-546A-4606-BF3B-44C3B3518E9B}</Project>
+      <Name>CRUDServiceImplementation</Name>
     </ProjectReference>
     <ProjectReference Include="..\DAL\DAL.csproj">
       <Project>{b195ae2e-a13d-45c0-a6ef-c92c4fb5c85e}</Project>

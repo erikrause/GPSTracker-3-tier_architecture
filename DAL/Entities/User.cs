@@ -21,7 +21,7 @@ namespace GPSTracker.DAL.Entities
 
         //[MaxLength(255)]
         //public string PasswordHash { get; set; }
-        public int ClientId { get; set; }
+        public int? ClientId { get; set; }
 
         public Client Client { get; set; }
         public bool Archived { get; set; }

@@ -17,7 +17,6 @@ namespace GPSTracker.DAL.EF
         TrackerContext db;
         public UserManager UserManager { get; private set; }
         public RoleManager RoleManager { get; private set; }
-
         public RepositorySQL(string connectionString)
         {
             db = new TrackerContext(connectionString);
