@@ -1,0 +1,154 @@
+﻿@model GPSTracker.DAL.Entities.Vehicle
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Vehicle</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.RegNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RegNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VIN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VIN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Model)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Model)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Category)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Year)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Year)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EngineModel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EngineModel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Chassis)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Chassis)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Color)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Color)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Power)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Power)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TankCapacity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TankCapacity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EngineType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EngineType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaxMass)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaxMass)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UnladenMass)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UnladenMass)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Manufacturer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Manufacturer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Country)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Country)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Archived)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Archived)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

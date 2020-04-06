@@ -174,6 +174,7 @@
     <Compile Include="Controllers\IndividualClientsController.cs" />
     <Compile Include="Controllers\LegalClientsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\VehiclesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -262,6 +263,12 @@
     <Content Include="Views\LegalClients\Index.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Vehicle.cshtml" />
+    <Content Include="Views\Vehicles\Index.cshtml" />
+    <Content Include="Views\Vehicles\Create.cshtml" />
+    <Content Include="Views\Vehicles\Details.cshtml" />
+    <Content Include="Views\Vehicles\Delete.cshtml" />
+    <Content Include="Views\Vehicles\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -292,6 +299,10 @@
     <ProjectReference Include="..\DAL\DAL.csproj">
       <Project>{b195ae2e-a13d-45c0-a6ef-c92c4fb5c85e}</Project>
       <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ServiceBase\CRUDServiceBase.csproj">
+      <Project>{1DAB7694-84E8-4BD8-9806-C7776A7B1525}</Project>
+      <Name>CRUDServiceBase</Name>
     </ProjectReference>
     <ProjectReference Include="..\UserServiceBase\UserServiceBase.csproj">
       <Project>{F2CB85A3-950C-4505-9F63-2183F98028E2}</Project>

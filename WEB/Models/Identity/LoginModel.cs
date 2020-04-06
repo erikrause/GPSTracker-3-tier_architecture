@@ -13,7 +13,7 @@ namespace WEB.Models.Identity
         [Required]
         [DataType(DataType.Password)]
         public string Password { get; set; }
-        public bool IsLegacy { get; set; }
+        //public bool IsLegacy { get; set; }
         public bool IsPersistent { get; set; }
         public bool ShouldLockout { get; set; }
     }

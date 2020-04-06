@@ -19,7 +19,6 @@ namespace GPSTracker.DAL.Entities
         public int Id { get; set; }
         public bool Archived { get; set; }
 
-
         //
         //public virtual ICollection<Payment> Payments { get; set; }
     }
