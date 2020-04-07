@@ -58,7 +58,7 @@
       <Name>CRUDServiceBase</Name>
     </ProjectReference>
     <ProjectReference Include="..\VehicleServiceBase\VehicleServiceBase.csproj">
-      <Project>{1E2F06CD-6761-4E57-8281-6623133B16CA}</Project>
+      <Project>{1e2f06cd-6761-4e57-8281-6623133b16ca}</Project>
       <Name>VehicleServiceBase</Name>
     </ProjectReference>
   </ItemGroup>
