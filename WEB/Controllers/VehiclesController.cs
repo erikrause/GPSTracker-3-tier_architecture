@@ -6,13 +6,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using VehicleServiceBase;
 
 namespace WEB.Controllers
 {
     public class VehiclesController : Controller
     {
-        ICRUDService<Vehicle> VehicleService;
-        public VehiclesController(ICRUDService<Vehicle> vehicleService)
+        //ICRUDService<Vehicle> VehicleService;
+        IVehicleService VehicleService;
+        public VehiclesController(IVehicleService vehicleService)
         {
             VehicleService = vehicleService;
         }

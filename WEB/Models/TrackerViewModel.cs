@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WEB.Models
 {
-    public class Tracker
+    public class TrackerViewModel : IEntityViewModel
     {
         public int Frequency { get; set; }
         public float Sensivity { get; set; }
@@ -16,6 +16,7 @@ namespace WEB.Models
         public float dimY { get; set; }
         public float dimZ { get; set; }
         public float Weight { get; set; }
+        public int id { get; set; }
         //public bool Archived { get; set; }
 
     }

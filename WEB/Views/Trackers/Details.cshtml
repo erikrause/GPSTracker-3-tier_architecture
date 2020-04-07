@@ -1,0 +1,82 @@
+﻿@model WEB.Models.TrackerViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TrackerViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Frequency)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Frequency)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sensivity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sensivity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Accuracy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Accuracy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StandbyTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StandbyTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dimX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dimX)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dimY)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dimY)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dimZ)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dimZ)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Weight)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Weight)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

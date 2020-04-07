@@ -136,7 +136,6 @@
     <Compile Include="Entities\LegalClient.cs" />
     <Compile Include="Entities\Payment.cs" />
     <Compile Include="EFIdentity\Role.cs" />
-    <Compile Include="Entities\Tariff.cs" />
     <Compile Include="Entities\Tracker.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="Entities\Vehicle.cs" />

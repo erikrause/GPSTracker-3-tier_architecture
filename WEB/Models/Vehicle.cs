@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using GPSTracker.DAL.Entities;
 
 namespace WEB.Models
 {
