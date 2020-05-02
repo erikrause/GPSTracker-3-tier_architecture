@@ -16,7 +16,7 @@ namespace WEB.Models
         public float dimY { get; set; }
         public float dimZ { get; set; }
         public float Weight { get; set; }
-        public int id { get; set; }
+        public int Id { get; set; }
         //public bool Archived { get; set; }
 
     }

@@ -23,7 +23,7 @@ namespace GPSTracker.DAL.Entities
         //public string PasswordHash { get; set; }
         public int? ClientId { get; set; }
 
-        public Client Client { get; set; }
+        public virtual Client Client { get; set; }
         public bool Archived { get; set; }
 
         // public Tariff Tariff { get; set; }

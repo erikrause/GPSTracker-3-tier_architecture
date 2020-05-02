@@ -8,6 +8,6 @@ namespace WEB.Models
 {
     public interface IEntityViewModel
     {
-        int id { get; set; } 
+        int Id { get; set; } 
     }
 }

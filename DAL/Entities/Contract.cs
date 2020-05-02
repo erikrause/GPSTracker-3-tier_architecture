@@ -15,7 +15,7 @@ namespace GPSTracker.DAL.Entities
         public byte[] Scan { get; set; }
         //public bool Arhived { get; set; }
         public int ClientId { get; set; }
-        public Client Client { get; set; }
+        public virtual Client Client { get; set; }
         public int Id { get; set; }
         public bool Archived { get; set; }
 

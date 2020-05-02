@@ -62,10 +62,11 @@ namespace GPSTracker.DAL.Entities
         public string Country { get; set; }
 
         //public bool Archived { get; set; }
+        public int? TrackerId { get; set; }
+        public virtual Tracker Tracker { get; set; }
 
-        public Tracker Tracker { get; set; }
-
-        public Client Client { get; set; }
+        public int? ClientId { get; set; }
+        public virtual Client Client { get; set; }
         public int Id { get; set; }
         public bool Archived { get; set; }
     }

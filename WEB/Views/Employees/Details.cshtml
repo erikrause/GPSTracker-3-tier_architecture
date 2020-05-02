@@ -1,0 +1,42 @@
+﻿@model WEB.Models.prob.Employee
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Employee</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Department.Departmrg)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Department.Departmrg)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FristName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FristName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.EmployeeID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

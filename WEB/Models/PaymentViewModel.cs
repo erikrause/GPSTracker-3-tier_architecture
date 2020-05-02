@@ -8,8 +8,9 @@ using GPSTracker.DAL.Interfaces;
 
 namespace WEB.Models
 {
-    public class Payment
+    public class PaymentViewModel : IEntityViewModel
     {
+        public int Id { get; set; }
         public float Sum { get; set; }
         //public bool Archived { get; set; }
         public int? ClientId { get; set; }

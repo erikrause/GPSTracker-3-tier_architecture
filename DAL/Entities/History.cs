@@ -11,14 +11,14 @@ namespace GPSTracker.DAL.Entities
 {
     public class History : IEntity
     {
-        public DbGeography Point { get; set; }
+        public virtual DbGeography Point { get; set; }
         public float X { get; set; }
         public float Y { get; set; }
         public float Z { get; set; }
         public DateTime DateTime { get; set; }
         public float Speed { get; set; }
         public int VehicleId { get; set; }
-        public Vehicle Vehicle { get; set; }
+        public virtual Vehicle Vehicle { get; set; }
         public int Id { get; set; }
         public bool Archived { get; set; }
     }

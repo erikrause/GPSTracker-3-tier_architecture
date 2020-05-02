@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace WEB.Models
 {
-    public class History
+    public class HistoryViewModel : IEntityViewModel
     {
+        public int Id { get; set; }
         public DbGeography Point { get; set; }
         public float X { get; set; }
         public float Y { get; set; }
@@ -16,6 +17,6 @@ namespace WEB.Models
         public DateTime DateTime { get; set; }
         public float Speed { get; set; }
         public int VehicleId { get; set; }
-        public Vehicle Vehicle { get; set; }
+        public VehicleViewModel Vehicle { get; set; }
     }
 }

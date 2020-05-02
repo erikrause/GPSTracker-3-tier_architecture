@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WEB.Models
 {
-    public class Contract
+    public class ContractViewModel : IEntityViewModel
     {
         public DateTime DateCreated { get; set; }
         public DateTime DateLastChanged { get; set; }
@@ -14,6 +14,7 @@ namespace WEB.Models
         //public bool Arhived { get; set; }
         public int ClientId { get; set; }
         public Client Client { get; set; }
+        public int Id { get; set; }
 
         //public Tariff Tariff { get; set; }     //сам добавил
     }

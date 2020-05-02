@@ -10,8 +10,9 @@ using GPSTracker.DAL.Entities;
 
 namespace WEB.Models
 {
-    public class Vehicle
+    public class VehicleViewModel : IEntityViewModel
     {
+        public int Id { get; set; }
         [MaxLength(50)]
         public string RegNumber { get; set; }
 

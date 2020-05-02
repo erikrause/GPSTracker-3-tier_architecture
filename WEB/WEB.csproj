@@ -174,11 +174,15 @@
     <Compile Include="App_Start\Startup.cs" />
     <Compile Include="Controllers\Abstract\CRUDController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\ClientController.cs" />
+    <Compile Include="Controllers\ContractsController.cs" />
+    <Compile Include="Controllers\DepartmentsController.cs" />
+    <Compile Include="Controllers\EmployeesController.cs" />
+    <Compile Include="Controllers\HistoriesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IndividualClientsController.cs" />
     <Compile Include="Controllers\LegalClientsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PaymentsController.cs" />
     <Compile Include="Controllers\TrackersController.cs" />
     <Compile Include="Controllers\VehiclesController.cs" />
     <Compile Include="Global.asax.cs">
@@ -187,16 +191,21 @@
     <Compile Include="Infrastructure\RepositoryModule.cs" />
     <Compile Include="Infrastructure\ServiceModule.cs" />
     <Compile Include="Models\Client.cs" />
-    <Compile Include="Models\Contract.cs" />
-    <Compile Include="Models\History.cs" />
+    <Compile Include="Models\ContractViewModel.cs" />
+    <Compile Include="Models\HistoryViewModel.cs" />
     <Compile Include="Models\Identity\LoginModel.cs" />
     <Compile Include="Models\Identity\RegisterModel.cs" />
     <Compile Include="Models\IEntityViewModel.cs" />
     <Compile Include="Models\IndividualClient.cs" />
     <Compile Include="Models\LegalClient.cs" />
-    <Compile Include="Models\Payment.cs" />
+    <Compile Include="Models\PaymentViewModel.cs" />
+    <Compile Include="Models\prob\A.cs" />
+    <Compile Include="Models\prob\B.cs" />
+    <Compile Include="Models\prob\Department.cs" />
+    <Compile Include="Models\prob\Employee.cs" />
+    <Compile Include="Models\prob\ProbContext.cs" />
     <Compile Include="Models\TrackerViewModel.cs" />
-    <Compile Include="Models\Vehicle.cs" />
+    <Compile Include="Models\VehicleViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -272,21 +281,34 @@
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Vehicle.cshtml" />
     <Content Include="Views\Vehicles\Index.cshtml" />
-    <Content Include="Views\Vehicles\Create.cshtml" />
     <Content Include="Views\Vehicles\Details.cshtml" />
     <Content Include="Views\Vehicles\Delete.cshtml" />
     <Content Include="Views\Vehicles\Edit.cshtml" />
     <Content Include="Views\Client\Create.cshtml" />
-    <Content Include="Views\Trackers\Index.cshtml" />
     <Content Include="Views\Trackers\Create.cshtml" />
     <Content Include="Views\Trackers\Edit.cshtml" />
     <Content Include="Views\Trackers\Delete.cshtml" />
+    <Content Include="Views\Vehicles\Create.cshtml" />
     <Content Include="Views\Trackers\Details.cshtml" />
+    <Content Include="Views\Trackers\Index-modal.cshtml" />
+    <Content Include="Views\Departments\Create.cshtml" />
+    <Content Include="Views\Departments\Delete.cshtml" />
+    <Content Include="Views\Departments\Details.cshtml" />
+    <Content Include="Views\Departments\Edit.cshtml" />
+    <Content Include="Views\Departments\Index.cshtml" />
+    <Content Include="Views\Employees\Delete.cshtml" />
+    <Content Include="Views\Employees\Details.cshtml" />
+    <Content Include="Views\Employees\Edit.cshtml" />
+    <Content Include="Views\Employees\Index.cshtml" />
+    <Content Include="Views\Employees\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Contracts\" />
     <Folder Include="Views\CRUD\" />
+    <Folder Include="Views\Histories\" />
     <Folder Include="Views\Manage\" />
+    <Folder Include="Views\Payments\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

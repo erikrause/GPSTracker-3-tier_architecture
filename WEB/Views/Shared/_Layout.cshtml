@@ -29,11 +29,10 @@
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
-                            @Html.ActionLink("Трекер", "Index", "Home")
-                            <a href="#">Another action</a>
-                            <a href="#">Something else here</a>
-                            <li role="separator" class="divider"></li>
-                            <a href="#">Separated link</a>
+                            <li>@Html.ActionLink("Трекеры", "Index", "Trackers")</li>
+                            <li>@Html.ActionLink("Транспорт", "Index", "Vehicles")</li>
+                            <li>@Html.ActionLink("Платежи", "Index", "Payments")</li>
+                            <li>@Html.ActionLink("Контракты", "Index", "Contracts")</li>
                         </ul>
                     </li>
                 </ul>
