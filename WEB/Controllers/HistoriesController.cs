@@ -1,4 +1,5 @@
 ﻿using GPSTracker.DAL.Entities;
+using HistoryServiceBase;
 using ServiceBase;
 using System;
 using System.Collections.Generic;
@@ -12,14 +13,8 @@ namespace WEB.Controllers
 {
     public class HistoriesController : CRUDController<History, HistoryViewModel>
     {
-        public HistoriesController(ICRUDService<History> CRUDservice) : base(CRUDservice)
+        public HistoriesController(IHistoryService CRUDservice) : base(CRUDservice)
         {
-        }
-
-        // GET: Histories
-        public ActionResult Index()
-        {
-            return View();
         }
     }
 }

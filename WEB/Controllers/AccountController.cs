@@ -61,12 +61,16 @@ namespace WEB.Controllers
                 {
                     ModelState.AddModelError("", "Неверный логин или пароль.");
                 }
-                AuthenticationManager.SignOut();
-                AuthenticationManager.SignIn(new AuthenticationProperties
+                else
                 {
-                    IsPersistent = model.IsPersistent
+                    AuthenticationManager.SignOut();
+                    AuthenticationManager.SignIn(new AuthenticationProperties
+                    {
+                        IsPersistent = model.IsPersistent
 
-                }, claim);
+                    }, claim);
+                }
+
                 return RedirectToAction("Index", "Home");
                 /*
                 switch (result)
@@ -111,7 +115,17 @@ namespace WEB.Controllers
                 };
                 IOperationDetails operationDetails = await UserService.Create(user, model.Password);
                 if (operationDetails.Succedeed)
+                {
+                    // TODO: need to refactoring.
+                    ClaimsIdentity claim = await UserService.Authenticate(model.Email, model.Password);
+                    AuthenticationManager.SignOut();
+                    AuthenticationManager.SignIn(new AuthenticationProperties
+                    {
+                        IsPersistent = false
+
+                    }, claim);
                     return View("SuccessRegister");
+                }
                 else
                     ModelState.AddModelError(operationDetails.Property, operationDetails.Message);
             }

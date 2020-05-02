@@ -1,4 +1,5 @@
-﻿using ClientServiceBase;
+﻿using AutoMapper;
+using ClientServiceBase;
 using GPSTracker.DAL.Entities;
 using System;
 using System.Collections.Generic;
@@ -7,30 +8,36 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using UserServiceBase;
+using WEB.Models;
 
 namespace WEB.Controllers
 {
     [Authorize]
     public class LegalClientsController : Controller
     {
-        IClientService ClientService;
-        IUserService UserService;
+        readonly IClientService _clientService;
+        readonly IUserService _userService;
+        readonly IMapper _mapper;
+
 
         public LegalClientsController(IClientService clientService, IUserService userService)
         {
-            ClientService = clientService;
-            UserService = userService;
+            _clientService = clientService;
+            _userService = userService;
+            _mapper = new MapperConfiguration(cfg => cfg.CreateMap<LegalClient, LegalClientViewModel>().ReverseMap()).CreateMapper();
         }
         // GET: LegalClients
         public async Task<ActionResult> Index()
         {
-            return View(await ClientService.GetLegalClients());
+            var legalClients = await _clientService.GetLegalClients();
+            return View(_mapper.Map<IEnumerable<LegalClientViewModel>>(legalClients));
         }
 
         // GET: LegalClients/Details/5
         public async Task<ActionResult> Details(int id)
         {
-            return View(await ClientService.GetLegalClient(id));
+            var legalCLient = await _clientService.GetLegalClient(id);
+            return View(_mapper.Map < LegalClientViewModel > (legalCLient));
         }
 
         // GET: LegalClients/Create
@@ -41,12 +48,12 @@ namespace WEB.Controllers
 
         // POST: LegalClients/Create
         [HttpPost]
-        public async Task<ActionResult> Create(LegalClient legalClient)
+        public async Task<ActionResult> Create(LegalClientViewModel legalClientViewModel)
         {
             try
             {
-                User currentUser = await UserService.GetCurrent();
-                await ClientService.CreateLegalClient(legalClient, currentUser);
+                var legalClient = _mapper.Map<LegalClient>(legalClientViewModel);
+                await _clientService.CreateLegalClient(legalClient);
 
                 return RedirectToAction("Index");
             }
@@ -59,16 +66,18 @@ namespace WEB.Controllers
         // GET: LegalClients/Edit/5
         public async Task<ActionResult> Edit(int id)
         {
-            return View(await ClientService.GetLegalClient(id));
+            var legalClient = await _clientService.GetLegalClient(id);
+            return View(_mapper.Map<LegalClientViewModel>(legalClient));
         }
 
         // POST: LegalClients/Edit/5
         [HttpPost]
-        public async Task<ActionResult> Edit(int id, LegalClient legalClient)
+        public async Task<ActionResult> Edit(int id, LegalClientViewModel legalClientViewModel)
         {
             try
             {
-                await ClientService.UpdateLegalClient(legalClient);
+                var legalClient = _mapper.Map<LegalClient>(legalClientViewModel);
+                await _clientService.UpdateLegalClient(legalClient);
 
                 return RedirectToAction("Index");
             }
@@ -81,17 +90,17 @@ namespace WEB.Controllers
         // GET: LegalClients/Delete/5
         public async Task<ActionResult> Delete(int id)
         {
-            
-            return View(await ClientService.GetLegalClient(id));
+            var legalClient = await _clientService.GetLegalClient(id);
+            return View(_mapper.Map<LegalClientViewModel>(legalClient));
         }
 
         // POST: LegalClients/Delete/5
         [HttpPost]
-        public async Task<ActionResult> Delete(int id, FormCollection collection)
+        public async Task<ActionResult> Delete(int id, LegalClientViewModel legalClientViewModel)
         {
             try
             {
-                await ClientService.DeleteLegalClient(id);
+                await _clientService.DeleteLegalClient(id);
 
                 return RedirectToAction("Index");
             }

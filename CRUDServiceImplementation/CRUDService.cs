@@ -17,32 +17,32 @@ namespace CRUDServiceImplementation
         {
             Repo = repo;
         }
-        public async Task Create(T entity)
+        public virtual async Task Create(T entity)
         {
             await Repo.Save(entity);
         }
 
-        public async Task Delete(T entity)
+        public virtual async Task Delete(T entity)
         {
             await Repo.Remove(entity);
         }
 
-        public async Task<T> Get(int id)
+        public virtual async Task<T> Get(int id)
         {
             return await Repo.Get<T>(id);
         }
 
-        public async Task<IEnumerable<T>> GetAll()
+        public virtual async Task<IEnumerable<T>> GetAll()
         {
             return await Repo.GetAll<T>();
         }
 
-        public async Task<IEnumerable<T>> GetBy(Expression<Func<T, bool>> predicate)
+        public virtual async Task<IEnumerable<T>> GetBy(Expression<Func<T, bool>> predicate)
         {
             return await Repo.GetBy(predicate);
         }
 
-        public async Task Update(T entity)
+        public virtual async Task Update(T entity)
         {
             await Repo.Update(entity);
         }

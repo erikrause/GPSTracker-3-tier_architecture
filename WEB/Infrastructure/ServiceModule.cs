@@ -11,6 +11,8 @@ using PaymentServiceImplementation;
 using PaymentServiceBase;
 using ContractServiceBase;
 using ContractServiceImplementation;
+using UserServiceBase;
+using UserServiceImplementation;
 
 namespace WEB.Infrastructure
 {
@@ -24,6 +26,7 @@ namespace WEB.Infrastructure
             Bind<ITrackerService>().To<TrackerService>();
             Bind<IPaymentService>().To<PaymentService>();
             Bind<IContractService>().To<ContractService>();
+            Bind<IUserService>().To<UserService>();
         }
     }
 }

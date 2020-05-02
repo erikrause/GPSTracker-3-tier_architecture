@@ -1,4 +1,5 @@
 ﻿using GPSTracker.DAL.Entities;
+using PaymentServiceBase;
 using ServiceBase;
 using System;
 using System.Collections.Generic;
@@ -12,14 +13,8 @@ namespace WEB.Controllers
 {
     public class PaymentsController : CRUDController<Payment, PaymentViewModel>
     {
-        public PaymentsController(ICRUDService<Payment> CRUDservice) : base(CRUDservice)
+        public PaymentsController(IPaymentService CRUDservice) : base(CRUDservice)
         {
-        }
-
-        // GET: Payments
-        public ActionResult Index()
-        {
-            return View();
         }
     }
 }

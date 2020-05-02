@@ -9,9 +9,9 @@ namespace ClientServiceBase
 {
     public interface IClientService
     {
-        Task CreateIndividualClient(IndividualClient individualClient, User user);
+        Task CreateIndividualClient(IndividualClient individualClient);
 
-        Task CreateLegalClient(LegalClient legalClient, User user);
+        Task CreateLegalClient(LegalClient legalClient);
 
         Task DeleteClient(int id);
 

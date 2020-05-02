@@ -1,4 +1,4 @@
-﻿@model GPSTracker.DAL.Entities.IndividualClient
+﻿@model WEB.Models.IndividualClientViewModel
 
 @{
     ViewBag.Title = "Delete";
@@ -11,13 +11,6 @@
     <h4>IndividualClient</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Archived)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Archived)
-        </dd>
 
         <dt>
             @Html.DisplayNameFor(model => model.FirstName)
@@ -77,7 +70,8 @@
 
     </dl>
 
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">

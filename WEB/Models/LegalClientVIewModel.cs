@@ -9,11 +9,9 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WEB.Models
 {
-    public class IndividualClient
+    public class LegalClientViewModel : IEntityViewModel
     {
-        //[Key]
-        //[ForeignKey("Client")]
-        //public int Id { get; set;}
+        public int Id { get; set; }
 
         [Column(TypeName = "char")]
         [MaxLength(255)]
@@ -21,29 +19,22 @@ namespace WEB.Models
 
         [Column(TypeName = "char")]
         [MaxLength(255)]
-        public string SurName { get; set; }
+        public string SecondName { get; set; }
 
         [Column(TypeName = "char")]
         [MaxLength(255)]
         public string PatrName { get; set; }
 
+        [MaxLength(50)]
+        public string INN { get; set; }
+
+        [MaxLength(50)]
+        public string KPP { get; set; }
+
         [MaxLength(255)]
         public string Adress { get; set; }
 
-        [MaxLength(50)]
-        public string PassSeries { get; set; }
-
-        [MaxLength(50)]
-        public string PassNum;
-
-        [MaxLength(255)]
-        public string PassissueOrg { get; set; }
-
-        public DateTime DateTime { get; set; }
-
         //public bool Archived { get; set; }
 
-        // FK
-        //public virtual Client Client { get; set; }
     }
 }

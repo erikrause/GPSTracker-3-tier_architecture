@@ -11,22 +11,23 @@ using WEB.Models;
 
 namespace WEB.Controllers.Abstract
 {
+    [Authorize]
     public class CRUDController<TEntity, TEntityViewModel> : Controller where TEntity : class, IEntity 
-                                                   where TEntityViewModel : class, IEntityViewModel
+                                                                        where TEntityViewModel : class, IEntityViewModel
     {
-        ICRUDService<TEntity> CRUDService;
-        IMapper Mapper;
+        ICRUDService<TEntity> _CRUDService;
+        IMapper _mapper;
         public CRUDController(ICRUDService<TEntity> CRUDservice)
         {
-            this.CRUDService = CRUDservice;
-            Mapper = new MapperConfiguration(cfg => cfg.CreateMap<TEntity, TEntityViewModel>().ReverseMap()).CreateMapper();
+            this._CRUDService = CRUDservice;
+            _mapper = new MapperConfiguration(cfg => cfg.CreateMap<TEntity, TEntityViewModel>().ReverseMap()).CreateMapper();
 
         }
         // GET: CRUD
         public virtual async Task<ActionResult> Index()
         {
-            IEnumerable<TEntity> entities = await CRUDService.GetAll();
-            var entitiesViewModel = Mapper.Map<IEnumerable<TEntity>, IEnumerable<TEntityViewModel>>(entities);
+            IEnumerable<TEntity> entities = await _CRUDService.GetAll();
+            var entitiesViewModel = _mapper.Map<IEnumerable<TEntity>, IEnumerable<TEntityViewModel>>(entities);
             //var prob = mapper.Map<IEnumerable<U>>(entities);
             //var prob2 = mapper.Map<IEnumerable<T>>(prob);
             return View(entitiesViewModel);
@@ -35,7 +36,7 @@ namespace WEB.Controllers.Abstract
         // GET: CRUD/Details/5
         public virtual async Task<ActionResult> Details(int id)
         {
-            return View(Mapper.Map<TEntityViewModel>(await CRUDService.Get(id)));
+            return View(_mapper.Map<TEntityViewModel>(await _CRUDService.Get(id)));
         }
 
         // GET: CRUD/Create
@@ -50,8 +51,8 @@ namespace WEB.Controllers.Abstract
         {
             try
             {
-                TEntity entity = Mapper.Map<TEntityViewModel, TEntity>(entityViewModel);
-                await CRUDService.Create(entity);
+                TEntity entity = _mapper.Map<TEntityViewModel, TEntity>(entityViewModel);
+                await _CRUDService.Create(entity);
                 return RedirectToAction("Index");
             }
             catch
@@ -63,7 +64,7 @@ namespace WEB.Controllers.Abstract
         // GET: CRUD/Edit/5
         public virtual async Task<ActionResult> Edit(int id)
         {
-            return View(Mapper.Map<TEntityViewModel>(await CRUDService.Get(id)));
+            return View(_mapper.Map<TEntityViewModel>(await _CRUDService.Get(id)));
         }
 
         // POST: CRUD/Edit/5
@@ -72,8 +73,8 @@ namespace WEB.Controllers.Abstract
         {
             try
             {
-                TEntity entity = Mapper.Map<TEntity>(entityViewModel);
-                await CRUDService.Update(entity);
+                TEntity entity = _mapper.Map<TEntity>(entityViewModel);
+                await _CRUDService.Update(entity);
                 return RedirectToAction("Index");
             }
             catch
@@ -85,7 +86,7 @@ namespace WEB.Controllers.Abstract
         // GET: CRUD/Delete/5
         public virtual async Task<ActionResult> Delete(int id)
         {
-            return View(Mapper.Map<TEntityViewModel>(await CRUDService.Get(id)));
+            return View(_mapper.Map<TEntityViewModel>(await _CRUDService.Get(id)));
         }
 
         // POST: CRUD/Delete/5
@@ -94,8 +95,8 @@ namespace WEB.Controllers.Abstract
         {
             try
             {
-                TEntity entity = Mapper.Map<TEntity>(entityVievModel);
-                await CRUDService.Delete(entity);
+                TEntity entity = _mapper.Map<TEntity>(entityVievModel);
+                await _CRUDService.Delete(entity);
                 return RedirectToAction("Index");
             }
             catch

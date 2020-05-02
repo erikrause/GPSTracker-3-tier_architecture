@@ -1,4 +1,5 @@
-﻿using GPSTracker.DAL.Entities;
+﻿using ContractServiceBase;
+using GPSTracker.DAL.Entities;
 using ServiceBase;
 using System;
 using System.Collections.Generic;
@@ -12,14 +13,8 @@ namespace WEB.Controllers
 {
     public class ContractsController : CRUDController<Contract, ContractViewModel>
     {
-        public ContractsController(ICRUDService<Contract> CRUDservice) : base(CRUDservice)
+        public ContractsController(IContractService CRUDservice) : base(CRUDservice)
         {
-        }
-
-        // GET: Contracts
-        public ActionResult Index()
-        {
-            return View();
         }
     }
 }

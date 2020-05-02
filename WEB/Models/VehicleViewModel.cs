@@ -29,7 +29,7 @@ namespace WEB.Models
 
         [Column(TypeName = "char")]
         [MaxLength(10)]
-        public string Cetegory { get; set; }
+        public string Category { get; set; }
 
         public int Year { get; set; }
 
@@ -63,11 +63,12 @@ namespace WEB.Models
         public string Country { get; set; }
 
         //public bool Archived { get; set; }
+        public int TrackerId { get; set; }
 
         public Tracker Tracker { get; set; }
+        public int CLientId { get; set; }
 
         public Client Client { get; set; }
-        public int Id { get; set; }
         public bool Archived { get; set; }
     }
 }

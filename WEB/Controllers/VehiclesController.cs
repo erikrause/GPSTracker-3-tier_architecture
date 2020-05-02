@@ -14,7 +14,7 @@ namespace WEB.Controllers
 {
     public class VehiclesController : CRUDController<Vehicle, VehicleViewModel>
     {
-        public VehiclesController(ICRUDService<Vehicle> CRUDservice) : base(CRUDservice)
+        public VehiclesController(IVehicleService CRUDservice) : base(CRUDservice)
         {
         }
     }

@@ -16,22 +16,18 @@ namespace ClientServiceImplementation
         {
             Repo = repo;
         }
-        public async Task CreateIndividualClient(IndividualClient individualClient, User user)
+        public async Task CreateIndividualClient(IndividualClient individualClient)
         {
             await Repo.Save(individualClient);
             Client client = new Client { IndividualClient = individualClient };
             await Repo.Save(client);
-            user.Client = client;
-            await Repo.Update(user);
         }
 
-        public async Task CreateLegalClient(LegalClient legalClient, User user)
+        public async Task CreateLegalClient(LegalClient legalClient)
         {
             await Repo.Save(legalClient);
             Client client = new Client { LegalClient = legalClient };
             await Repo.Save(client);
-            user.Client = client;
-            await Repo.Update(user);
         }
 
         public async Task DeleteClient(int id)

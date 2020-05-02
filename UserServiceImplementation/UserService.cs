@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 using UserServiceBase;
+
 namespace UserServiceImplementation
 {
     public class UserService : IUserService
@@ -21,7 +22,18 @@ namespace UserServiceImplementation
         public UserService(IRepository repo)
         {
             Repo = repo;
+            //InitDb();
+
             //SignInManager = new SignInManager<User, int>(Repo.UserManager, HttpContext.GetOwinContext().Authentication);
+        }
+        async void InitDb()
+        {
+            var userRole = (await Repo.GetBy<Role>(role => role.Name == "user")).SingleOrDefault();
+
+            if (userRole == null)
+            {
+                Repo.RoleManager.Create(new Role { Name = "user", Archived = false });
+            }
         }
 
         public async Task<ClaimsIdentity> Authenticate(string email, string password)
@@ -29,8 +41,12 @@ namespace UserServiceImplementation
             ClaimsIdentity claim = null;
             User user = (await Repo.GetBy<User>(x => x.Email == email)).SingleOrDefault();
             // авторизуем его и возвращаем объект ClaimsIdentity
-            claim = await Repo.UserManager.CreateIdentityAsync(user,
-                                            DefaultAuthenticationTypes.ApplicationCookie);
+            if (user != null)
+            {
+                claim = await Repo.UserManager.CreateIdentityAsync(user,
+                                DefaultAuthenticationTypes.ApplicationCookie);
+            }
+
             return claim;
         }
 
@@ -45,7 +61,8 @@ namespace UserServiceImplementation
                 if (result.Errors.Count() > 0)
                     return new OperationDetails(false, result.Errors.FirstOrDefault(), "");
                 // добавляем роль
-                await Repo.UserManager.AddToRoleAsync(user.Id, "user");
+                //await Repo.UserManager.AddToRoleAsync(user.Id, "user");
+
                 // создаем профиль клиента
                 //ClientProfile clientProfile = new ClientProfile { Id = user.Id, Address = userDto.Address, Name = userDto.Name };
                 //Repo.ClientManager.Create(clientProfile);

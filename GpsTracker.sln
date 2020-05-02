@@ -41,6 +41,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContractServiceBase", "Cont
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContractServiceImplementation", "ContractServiceImplementation\ContractServiceImplementation.csproj", "{A77B868B-49AC-45FC-9EF4-1BC9978D18A6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HistoryServiceBase", "HistoryServiceBase\HistoryServiceBase.csproj", "{48F7F10F-70C5-4C6A-85D3-04E7B160E0AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HistoryServiceImplementation", "HistoryServiceImplementation\HistoryServiceImplementation.csproj", "{FCF81AE0-02A7-4359-B4F6-0E62750C6D8D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -115,6 +119,14 @@ Global
 		{A77B868B-49AC-45FC-9EF4-1BC9978D18A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A77B868B-49AC-45FC-9EF4-1BC9978D18A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A77B868B-49AC-45FC-9EF4-1BC9978D18A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48F7F10F-70C5-4C6A-85D3-04E7B160E0AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48F7F10F-70C5-4C6A-85D3-04E7B160E0AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48F7F10F-70C5-4C6A-85D3-04E7B160E0AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48F7F10F-70C5-4C6A-85D3-04E7B160E0AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCF81AE0-02A7-4359-B4F6-0E62750C6D8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCF81AE0-02A7-4359-B4F6-0E62750C6D8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCF81AE0-02A7-4359-B4F6-0E62750C6D8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCF81AE0-02A7-4359-B4F6-0E62750C6D8D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -136,6 +148,8 @@ Global
 		{D4DDB430-73C3-4127-AE0E-CAEE5A11FD9F} = {77FEB351-180A-4DD7-B762-3685027643FB}
 		{82AB9260-3BD4-40E8-904C-DB39B62A938C} = {77FEB351-180A-4DD7-B762-3685027643FB}
 		{A77B868B-49AC-45FC-9EF4-1BC9978D18A6} = {77FEB351-180A-4DD7-B762-3685027643FB}
+		{48F7F10F-70C5-4C6A-85D3-04E7B160E0AF} = {77FEB351-180A-4DD7-B762-3685027643FB}
+		{FCF81AE0-02A7-4359-B4F6-0E62750C6D8D} = {77FEB351-180A-4DD7-B762-3685027643FB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {79C47A33-D4DE-474D-AFB6-CB1C2222C50D}

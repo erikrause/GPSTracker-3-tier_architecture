@@ -1,4 +1,4 @@
-﻿@model IEnumerable<GPSTracker.DAL.Entities.IndividualClient>
+﻿@model IEnumerable<WEB.Models.IndividualClientViewModel>
 
 @{
     ViewBag.Title = "Index";
@@ -11,9 +11,6 @@
 </p>
 <table class="table">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Archived)
-        </th>
         <th>
             @Html.DisplayNameFor(model => model.FirstName)
         </th>
@@ -40,9 +37,6 @@
 
 @foreach (var item in Model) {
     <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Archived)
-        </td>
         <td>
             @Html.DisplayFor(modelItem => item.FirstName)
         </td>

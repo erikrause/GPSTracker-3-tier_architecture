@@ -1,4 +1,4 @@
-﻿@model WEB.Models.prob.Employee
+﻿@model WEB.Models.PaymentViewModel
 
 @{
     ViewBag.Title = "Delete";
@@ -8,31 +8,23 @@
 
 <h3>Are you sure you want to delete this?</h3>
 <div>
-    <h4>Employee</h4>
+    <h4>PaymentViewModel</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Department.Departmrg)
+            @Html.DisplayNameFor(model => model.Sum)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Department.Departmrg)
+            @Html.DisplayFor(model => model.Sum)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.FristName)
+            @Html.DisplayNameFor(model => model.ClientId)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.FristName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.LastName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.LastName)
+            @Html.DisplayFor(model => model.ClientId)
         </dd>
 
     </dl>

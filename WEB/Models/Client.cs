@@ -12,10 +12,10 @@ namespace WEB.Models
     {
         //[ForeignKey("IndividualClient")]
         public int? IndividualClientId { get; set; }
-        public virtual IndividualClient IndividualClient { get; set; }
+        public virtual IndividualClientViewModel IndividualClient { get; set; }
         //[ForeignKey("LegalClient")]
         public int? LegalClientId { get; set; }
-        public virtual LegalClient LegalClient { get; set; }
+        public virtual LegalClientViewModel LegalClient { get; set; }
         public int Id { get; set; }
         public bool Archived { get; set; }
 

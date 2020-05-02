@@ -1,4 +1,5 @@
-﻿using ClientServiceBase;
+﻿using AutoMapper;
+using ClientServiceBase;
 using GPSTracker.DAL.Entities;
 using System;
 using System.Collections.Generic;
@@ -7,6 +8,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using UserServiceBase;
+using WEB.Models;
 
 namespace WEB.Controllers
 {
@@ -15,21 +17,28 @@ namespace WEB.Controllers
     {
         IClientService ClientService;
         IUserService UserService;
+        IMapper _mapper;
         public IndividualClientsController(IClientService clientService, IUserService userService)
         {
             ClientService = clientService;
             UserService = userService;
+            _mapper = new MapperConfiguration(cfg => cfg.CreateMap<IndividualClient, IndividualClientViewModel>().ReverseMap()).CreateMapper();
         }
         // GET: IndividualClients
         public async Task<ActionResult> Index()
         {
-            return View(await ClientService.GetIndividualClients());
+            var individualClients = await ClientService.GetIndividualClients();
+            var individualClientsViewModel = _mapper.Map < IEnumerable < IndividualClientViewModel >> (individualClients);
+
+            return View(individualClientsViewModel);
         }
 
         // GET: IndividualClients/Details/5
         public async Task<ActionResult> Details(int id)
         {
-            return View(await ClientService.GetIndividualClient(id));
+            var individualClient = await ClientService.GetIndividualClient(id);
+
+            return View(_mapper.Map<IndividualClientViewModel>(individualClient));
         }
 
         // GET: IndividualClients/Create
@@ -40,12 +49,12 @@ namespace WEB.Controllers
 
         // POST: IndividualClients/Create
         [HttpPost]
-        public async Task<ActionResult> Create(IndividualClient individualClient)
+        public async Task<ActionResult> Create(IndividualClientViewModel individualClientViewModel)
         {
             try
             {
-                User currentUser = await UserService.GetCurrent();
-                await ClientService.CreateIndividualClient(individualClient, currentUser);
+                var individualClient = _mapper.Map<IndividualClient>(individualClientViewModel);
+                await ClientService.CreateIndividualClient(individualClient);
                 return RedirectToAction("Index");
             }
             catch
@@ -57,15 +66,18 @@ namespace WEB.Controllers
         // GET: IndividualClients/Edit/5
         public async Task<ActionResult> Edit(int id)
         {
-            return View(await ClientService.GetIndividualClient(id));
+            var individualClient = await ClientService.GetIndividualClient(id);
+
+            return View(_mapper.Map<IndividualClientViewModel>(individualClient));
         }
 
         // POST: IndividualClients/Edit/5
         [HttpPost]
-        public async Task<ActionResult> Edit(int id, IndividualClient individualClient)
+        public async Task<ActionResult> Edit(int id, IndividualClientViewModel individualClientViewModel)
         {
             try
             {
+                var individualClient = _mapper.Map<IndividualClient>(individualClientViewModel);
                 await ClientService.UpdateIndividualClient(individualClient);
 
                 return RedirectToAction("Index");
@@ -79,12 +91,13 @@ namespace WEB.Controllers
         // GET: IndividualClients/Delete/5
         public async Task<ActionResult> Delete(int id)
         {
-            return View(await ClientService.GetLegalClient(id));
+            var individualCLient = await ClientService.GetLegalClient(id);
+            return View(_mapper.Map<IndividualClientViewModel>(individualCLient));
         }
 
         // POST: IndividualClients/Delete/5
         [HttpPost]
-        public async Task<ActionResult> Delete(int id, FormCollection collection)
+        public async Task<ActionResult> Delete(int id, IndividualClientViewModel individualClientViewModel)
         {
             try
             {
