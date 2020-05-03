@@ -279,7 +279,7 @@
     <Content Include="Views\Trackers\Create.cshtml" />
     <Content Include="Views\Trackers\Edit.cshtml" />
     <Content Include="Views\Trackers\Delete.cshtml" />
-    <Content Include="Views\Vehicles\Create.cshtml" />
+    <Content Include="Views\Vehicles\Create-modal.cshtml" />
     <Content Include="Views\Trackers\Details.cshtml" />
     <Content Include="Views\Trackers\Index-modal.cshtml" />
     <Content Include="Views\Contracts\Index.cshtml" />
@@ -300,6 +300,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Trackers\Index.cshtml" />
     <Content Include="Views\Account\SuccessRegister.cshtml" />
+    <Content Include="Views\Vehicles\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

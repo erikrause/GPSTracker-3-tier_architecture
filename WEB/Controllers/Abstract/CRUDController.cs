@@ -55,8 +55,11 @@ namespace WEB.Controllers.Abstract
                 await _CRUDService.Create(entity);
                 return RedirectToAction("Index");
             }
-            catch
+            catch(Exception ex)
             {
+                ModelState.AddModelError("", ex);
+                //return new Hax`
+                //return View("Error", ex.Message, new HandleErrorInfo(ex, "EmployeeInfo", "Create"));  // TODO: Error handler
                 return View();
             }
         }
