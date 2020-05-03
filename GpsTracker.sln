@@ -45,6 +45,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HistoryServiceBase", "Histo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HistoryServiceImplementation", "HistoryServiceImplementation\HistoryServiceImplementation.csproj", "{FCF81AE0-02A7-4359-B4F6-0E62750C6D8D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Class diagrams", "Class diagrams", "{7576D155-04B9-42C4-A972-0355F4F256C8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassDiagramsBLL", "ClassDiagramsBLL\ClassDiagramsBLL.csproj", "{40AF8FCB-B8B6-426A-9074-CB5927B8343E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -127,6 +131,10 @@ Global
 		{FCF81AE0-02A7-4359-B4F6-0E62750C6D8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FCF81AE0-02A7-4359-B4F6-0E62750C6D8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FCF81AE0-02A7-4359-B4F6-0E62750C6D8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40AF8FCB-B8B6-426A-9074-CB5927B8343E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40AF8FCB-B8B6-426A-9074-CB5927B8343E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40AF8FCB-B8B6-426A-9074-CB5927B8343E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40AF8FCB-B8B6-426A-9074-CB5927B8343E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -150,6 +158,7 @@ Global
 		{A77B868B-49AC-45FC-9EF4-1BC9978D18A6} = {77FEB351-180A-4DD7-B762-3685027643FB}
 		{48F7F10F-70C5-4C6A-85D3-04E7B160E0AF} = {77FEB351-180A-4DD7-B762-3685027643FB}
 		{FCF81AE0-02A7-4359-B4F6-0E62750C6D8D} = {77FEB351-180A-4DD7-B762-3685027643FB}
+		{40AF8FCB-B8B6-426A-9074-CB5927B8343E} = {7576D155-04B9-42C4-A972-0355F4F256C8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {79C47A33-D4DE-474D-AFB6-CB1C2222C50D}

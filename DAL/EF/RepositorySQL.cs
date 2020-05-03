@@ -50,9 +50,9 @@ namespace GPSTracker.DAL.EF
         public async Task Remove<T>(T entity) where T : class, IEntity
         {
             var cache = await db.Set<T>().FindAsync(entity.Id);    //Todo
-            //db.Set<T>().Remove(cache);
-            cache.Archived = true;
-            db.Entry(cache).State = EntityState.Modified;
+            db.Set<T>().Remove(cache);
+            //cache.Archived = true;
+            //db.Entry(cache).State = EntityState.Modified;
             await db.SaveChangesAsync();
         }
         public async Task<IEnumerable<T>> GetBy<T>(Expression<Func<T, bool>> predicate) where T : class, IEntity
