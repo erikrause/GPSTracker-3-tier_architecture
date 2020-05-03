@@ -37,6 +37,7 @@ namespace WEB.Models
         [MaxLength(255)]
         public string PassissueOrg { get; set; }
 
+        [DisplayFormat(DataFormatString = "{0:dd'.'MM'.'yyyy}", ApplyFormatInEditMode = true)]
         public DateTime DateTime { get; set; }
 
         //public bool Archived { get; set; }

@@ -14,8 +14,6 @@ namespace WEB.Models
         public float Sum { get; set; }
         //public bool Archived { get; set; }
         public int? ClientId { get; set; }
-        public virtual Client Client { get; set; }
-
         //public DateTime DateTime { get; set; }       //сам доавил
 
 

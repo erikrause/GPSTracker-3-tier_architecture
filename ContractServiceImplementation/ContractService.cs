@@ -13,7 +13,21 @@ namespace ContractServiceImplementation
     public class ContractService : CRUDService<Contract>, IContractService
     {
         public ContractService(IRepository repo) : base(repo)
+        { 
+        }
+         public override Task Create(Contract entity)
+         {
+            entity.DateCreated = DateTime.Now;
+            entity.DateLastChanged = DateTime.Now;
+
+            return base.Create(entity);
+         }
+
+        public override Task Update(Contract entity)
         {
+            entity.DateLastChanged = DateTime.Now;
+
+            return base.Update(entity);
         }
     }
 }

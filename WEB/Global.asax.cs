@@ -23,7 +23,7 @@ namespace WEB
 
             // Ninject Bindings:
             NinjectModule serviceModule = new ServiceModule();
-            NinjectModule repositoryModule = new RepositoryModule("DefaultConnection");//("GPSTrackerContext");
+            NinjectModule repositoryModule = new RepositoryModule("GPSTrackerContextLocal");//("GPSTrackerContext");
             var kernel = new StandardKernel(serviceModule, repositoryModule);
             kernel.Unbind<ModelValidatorProvider>();        // View validation bug (in create) without this unbind.
             DependencyResolver.SetResolver(new NinjectDependencyResolver(kernel));

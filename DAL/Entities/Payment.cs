@@ -15,7 +15,7 @@ namespace GPSTracker.DAL.Entities
         public int? ClientId { get; set; }
         public virtual Client Client { get; set; }
 
-        public DateTime DateTime { get; set; }       //сам доавил
+        //public DateTime DateTime { get; set; }       //сам добавил
 
         public int Id { get; set; }
         public bool Archived { get; set; }

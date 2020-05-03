@@ -64,11 +64,6 @@ namespace WEB.Models
 
         //public bool Archived { get; set; }
         public int TrackerId { get; set; }
-
-        public Tracker Tracker { get; set; }
-        public int CLientId { get; set; }
-
-        public Client Client { get; set; }
-        public bool Archived { get; set; }
+        public int ClientId { get; set; }
     }
 }

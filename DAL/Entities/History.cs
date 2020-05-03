@@ -10,7 +10,7 @@ using GPSTracker.DAL.Interfaces;
 namespace GPSTracker.DAL.Entities
 {
     public class History : IEntity
-    {
+    { 
         public virtual DbGeography Point { get; set; }
         public float X { get; set; }
         public float Y { get; set; }
